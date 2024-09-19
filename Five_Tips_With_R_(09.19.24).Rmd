@@ -1,0 +1,115 @@
+---
+title: "5 Tips for Getting Started in R"
+author: "MHirni"
+date: "2024-09-18"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+Welcome to **5 Fun Tips to Kickstart Your Journey in R**! In this tutorial, we’ll guide you through essential tips for mastering R. Whether you’re exploring the IDE or visualizing data, these tips will make your journey more enjoyable.
+
+R's two main elements include objects and functions. Objects are data structures like vectors, matrices, and data frames. Functions are commands that perform operations on objects. You can create objects, manipulate them, and analyze them using functions. Alas, we present the five tips below!
+
+# Tip 1: Save Time! Shortcuts Are All Around R.
+
+R is open source, and users can contribute to its development. As a result, we have incredible IDEs like RStudio that make coding more accessible. There are also keyboard shortcuts, packages containing extra functions, and a vast community to help you along the way (e.g., check out StackExchange).
+
+Some Shortcuts Specifically within RStudio Include:
+
+- **Ctrl/Command + Enter**: Run the current line or selection
+- **Ctrl/Command + Shift + M**: Insert a pipe (`%>%`) for tidyverse users
+- Buttons to run code, clean environments, save projects, and more!
+
+A markdown file like this one is a great place to see and practice shortcuts.
+
+Here’s a snippet to test:
+
+```{r}
+x <- rnorm(100)
+mean(x)
+```
+
+In this code above, `x` is assigned 100 random numbers from a normal distribution, and `mean(x)` calculates the mean of `x`. Try running this code using the shortcuts mentioned above!
+
+# Tip 2: Anything goes! Import any Data Source.
+
+Importing data is an everyday task. You might be pulling CSV files, or maybe you’re working from a system like SharePoint at MU. Using Waqar Ali's dataset about cat characteristics, here’s how you’d typically load data with a .csv file.
+
+```{r}
+# Import a CSV file
+cats_df <- read.csv("./cats.csv")
+
+# Check out the beginning of a dataset by using the function head()
+head(cats_df)
+```
+
+Note that I used a "." to indicate the current working directory which works for Unix-based systems. You can set a directory using `setwd()` and paste a pathway to `cats.csv`, or in RStudio, go to File -> Import Dataset -> From Text (base) to import data.
+
+There are ways to import Excel, SPSS, SAS and other formatted files if you take a look. If you import data from an source like SharePoint (or have your computer connected to a cloud), the process may involve a secure download link or an API connection. Always ensure you’ve got the correct permissions and file paths!
+
+# Tip 3: What's in the Box? Inspect Your Objects.
+
+In R, knowing your object types is half the battle. Use `class()`, `str()`, and `summary()` to figure out what you’re working with. This will save you from unexpected errors when you manipulate or analyze your data.
+
+```{r}
+class(cats_df)  # Class of the object
+summary(cats_df) # Summary of the object
+str(cats_df)    # Structure of the object
+```
+
+We see in the `str` output that some names look a little strange. We can overwrite column object names using the `colnames()` function:
+```{r}
+
+# Rename columns
+colnames(cats_df) <- c("Breed", "Age", "Weight_kg", "Color", "Gender")
+str(cats_df)    # Check the new column names
+```
+
+If you know how to inspect objects, you can better identify issues, use appropriate code for different object types, and understand
+
+# Tip 4: Visualize! When in Doubt, Plot it Out.
+
+A great way to get a feel for your data is through visualization. Simple plots in base R can help you quickly understand the relationships between variables. Here’s how you can make a basic scatter plot and add a linear model to it:
+
+```{r}
+# Continuous plot
+hist(cats_df$Age, main = "Histogram of Cat Age in Years", 
+     xlab = "Years Lived", col = "lightblue")
+
+
+# Categorical plot
+barplot(table(cats_df$Color), main = "Cat Color Distribution", 
+        xlab = "", ylab = "Frequency", col = "lightgreen", las = 2)
+
+```
+
+R automatically guesses what plots may fit your data best based on the structure of the objects (i.e., you can type the generic `plot()` function, and R will guess which visuals may fit your function best). Visualizing your data helps you see trends, outliers, or relationships between variables before diving into deeper analysis.
+
+# Tip 5: Explore! Find Descriptive Statistics for Your Data.
+
+Before running complex models, it’s essential to explore the descriptive statistics of your data. R makes it easy to get a quick summary:
+
+```{r}
+#install.packages("psych")
+library(psych)
+
+#For Continuous Descriptives
+describe(cats_df) 
+
+#For Categorical Descriptives
+table(cats_df$Color)
+```
+
+Using the `psych` package, you can see descriptive statistics with the `describe()` function (best suited for continuous variables) and frequency tables with the `table()` function (best suited for categorical variables).
+
+Before you move onto more advanced analyses, make sure you understand the structure of your data through visuals and descriptives.
+
+# Conclusion
+
+Thank you for reaching the end! Learning R is a hands-on experience, so the more you play around with these concepts and tools, the more proficient you’ll become. Happy coding!
+
