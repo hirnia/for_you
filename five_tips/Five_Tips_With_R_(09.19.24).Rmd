@@ -5,6 +5,8 @@ date: "2024-09-18"
 output: pdf_document
 ---
 
+**Find Me At: ** https://github.com/hirnia/for_you/tree/main/five_tips
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
