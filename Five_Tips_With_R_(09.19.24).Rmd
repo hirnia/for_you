@@ -1,5 +1,5 @@
 ---
-title: "5 Tips for Getting Started in R"
+title: "5 Tips for R"
 author: "MHirni"
 date: "2024-09-18"
 output: pdf_document
@@ -11,13 +11,13 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Introduction
 
-Welcome to **5 Fun Tips to Kickstart Your Journey in R**! In this tutorial, we’ll guide you through essential tips for mastering R. Whether you’re exploring the IDE or visualizing data, these tips will make your journey more enjoyable.
+Welcome to **5 Helpful Tips for R Users**! In this tutorial, we’ll guide you through essential tips for utilizing `R` whether you are just starting or more familiar with the language. Whether you’re exploring the IDE or visualizing data, these tips will make your journey more enjoyable.
 
-R's two main elements include objects and functions. Objects are data structures like vectors, matrices, and data frames. Functions are commands that perform operations on objects. You can create objects, manipulate them, and analyze them using functions. Alas, we present the five tips below!
+To introduce the language, `R` is an object-oriented programming (OOP) language with two main elements—*objects* and *functions*. Objects are data structures like vectors, matrices, and data frames. Functions are commands that perform operations on objects. You can create, manipulate, and analyze objects using functions. Alas, we present the five tips below!
 
-# Tip 1: Save Time! Shortcuts Are All Around R.
+# Tip 1: Save Time! Shortcuts Are All Around `R`.
 
-R is open source, and users can contribute to its development. As a result, we have incredible IDEs like RStudio that make coding more accessible. There are also keyboard shortcuts, packages containing extra functions, and a vast community to help you along the way (e.g., check out StackExchange).
+`R` is open source, and users can contribute to its development. As a result, we have incredible IDEs like RStudio that make coding more accessible. There are also keyboard shortcuts, packages containing extra functions, and a vast community to help you along the way (e.g., check out StackExchange).
 
 Some Shortcuts Specifically within RStudio Include:
 
@@ -25,7 +25,7 @@ Some Shortcuts Specifically within RStudio Include:
 - **Ctrl/Command + Shift + M**: Insert a pipe (`%>%`) for tidyverse users
 - Buttons to run code, clean environments, save projects, and more!
 
-A markdown file like this one is a great place to see and practice shortcuts.
+A markdown file like this one is a great place to see and practice shortcuts. Here, you will find "chunks" of code you can run with the click of a button. Markdown files are a great way to share code, results, and explanations in one place. You can also control output style, add LaTeX equations, and code in different languages all in one document.
 
 Here’s a snippet to test:
 
@@ -38,7 +38,7 @@ In this code above, `x` is assigned 100 random numbers from a normal distributio
 
 # Tip 2: Anything goes! Import any Data Source.
 
-Importing data is an everyday task. You might be pulling CSV files, or maybe you’re working from a system like SharePoint at MU. Using Waqar Ali's dataset about cat characteristics, here’s how you’d typically load data with a .csv file.
+You might be pulling CSV files for your own research, or maybe you’re working from a system like SharePoint at MU. Using Waqar Ali's dataset about cat characteristics, here’s how you’d typically load data with a .csv file.
 
 ```{r}
 # Import a CSV file
@@ -54,7 +54,7 @@ There are ways to import Excel, SPSS, SAS and other formatted files if you take 
 
 # Tip 3: What's in the Box? Inspect Your Objects.
 
-In R, knowing your object types is half the battle. Use `class()`, `str()`, and `summary()` to figure out what you’re working with. This will save you from unexpected errors when you manipulate or analyze your data.
+In R, knowing your object types makes information more transparent and can help you understand errors. Use `class()`, `str()`, and `summary()` to figure out what you’re working with. This will save you from unexpected output when you manipulate or analyze your data.
 
 ```{r}
 class(cats_df)  # Class of the object
