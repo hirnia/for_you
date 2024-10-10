@@ -1,5 +1,7 @@
 ---
 title: "Welcome to Tidyverse & More!"
+author: Presented by Megan Hirni
+date: October 10, 2024
 format: beamer
 editor: visual
 ---
@@ -8,7 +10,7 @@ editor: visual
 
 My name is Megan Hirni, and you can find my main work through GitHub (github.com/hirnia). I am a 3rd-ish year in Statistics + Education. You can find me through email (mj.hirni\@missouri.edu), GitHub, and LinkedIn.
 
-![Me (Megan Hirni)](D/Other/Career/10.jpg){fig-alt="A portrait photo of me (Megan Hirni)." width="130"}
+![Me (Megan Hirni)](images/10.jpg){fig-alt="A portrait photo of me (Megan Hirni)." width="115"}
 
 ## This Presentation Assumes You Know:
 
@@ -18,13 +20,15 @@ My name is Megan Hirni, and you can find my main work through GitHub (github.com
 
 -   You have patience to troubleshoot and try new things
 
--   If you do not meet the prequisites, there are resources available on and off campus to support you where you are at! Feel free to ask for any direction. :)
+If you do not meet the prequisites, there are resources available on and off campus to support you where you are at! Feel free to ask for any direction. :)
 
--   **You can follow along at: <https://github.com/hirnia/for_you>**
+**You can follow along at: <https://github.com/hirnia/for_you>**
 
 ## Welcome to Tidyverse
 
-Tidyverse is a set of packages that follows a similar coding style and output throughout. (<https://www.tidyverse.org>). Several packages—including `ggplot2`, `dplyr`, and `purrr` are housed under `tidyverse`, so installing `tidyverse` provides access to all housed core `tidyverse` packages.
+Tidyverse (Wickham, 2023) is a set of packages that follows a similar coding style and output throughout. (<https://www.tidyverse.org>). Several packages—including `ggplot2`, `dplyr`, and `purrr` are housed under `tidyverse`, so installing `tidyverse` provides access to all housed core `tidyverse` packages.
+
+![tidyverse core packages](images/tidyverse.png){width="318"}
 
 ```{r, eval = F}
 #| echo: true
@@ -58,19 +62,32 @@ Essentially, the pipe operator `%>%` takes the output of the function on the lef
 
 ## Airquality Example
 
-The `airquality` dataset is a built-in `R` dataset that containing daily air quality measurements in New York City May to September 1973 (Chambers et al., 1983) with variables:
+The `airquality` dataset is a built-in `R` dataset that containing daily air quality measurements in New York City May to September 1973 (Chambers et al., 1983) with variables: observation was made (a value between 5 and 9).
 
--   `Ozone` - The ozone variable represents the maximum daily ozone concentration in parts per billion (ppb) measured at a monitoring station in New York.
+`Ozone`: The ozone variable represents the maximum daily ozone concentration in parts per billion (ppb) measured at a monitoring station in New York.
 
--   `Solar` - R: The solar.R variable represents the daily solar radiation in Langleys (a measure of solar energy) measured at the same monitoring station.
+`Solar - R`: The solar.R variable represents the daily solar radiation in Langleys (a measure of solar energy) measured at the same monitoring station.
 
--   `Wind` - The wind variable represents the average daily wind speed in miles per hour (mph).
+`Wind`: The wind variable represents the average daily wind speed in miles per hour (mph).
 
--   `Temp` - The temp variable represents the average daily temperature in degrees Fahrenheit.
+`Temp`: The temp variable represents the average daily temperature in degrees Fahrenheit.
 
--   `Month` - The month variable represents the month in which the observation was made (a value between 5 and 9).
+`Month`: The month variable represents the month in which the observation was made (a value between 5 and 9).
 
--   `Day` - The day variable represents the day of the month on which the observation was made (a value between 1 and 31).
+`Day`: The day variable represents the day of the month on which the observation was made (a value between 1 and 31).
+
+## Airquality Table
+
+Using `knitr` (Yihui, 2024) and other R add-on packages, you can create automated tables that are easy to read and understand. The `kable` function in the `knitr` package is used to create tables from data frames in R. For other good table generating packages, try the packages `gt` and `flextable`.
+
+```{r}
+#| echo: true
+#| eval: false
+#library(knitr) #requires LaTeX
+kable(head(airquality))
+```
+
+![Airquality Table](images/kable table.png){width="188"}
 
 ## Basic ggplot
 
@@ -147,9 +164,9 @@ wind_ridgeline <- ggplot(data = airquality,
 wind_ridgeline
 ```
 
-## `ggplot` Add-Ons 
+## `ggplot` Add-Ons
 
-![ggplot2 logo](logo.png){fig-align="left" width="99"}
+![ggplot2 logo](images/ggplot2logo.png){fig-align="left" width="109"}
 
 As you saw with the ridgeline plot, there are many add-ons to `ggplot2` that can create unique visuals. Some popular add-ons include `gganimate` for creating animated plots, `ggrepel` for adding labels to plots, and `ggthemes` for adding themes to plots. The site <https://r-graph-gallery.com/> is a great resource for learning how to create different types of visuals using `ggplot2`.
 
@@ -167,7 +184,7 @@ wind_hist + wind_ridgeline
 
 The `+` operator is used to combine the two plots into one plot. You can also use the `/` operator to combine the plots vertically.
 
-## Back to `tidyverse`: 
+## Back to `tidyverse`:
 
 `dplyr` The `ggplot` capabilities are just small components of the `tidyverse` universe. The `dplyr` package is another powerful tool within the `tidyverse` that allows you to manipulate and summarize data. Below is an example of how to use `dplyr` to filter the `airquality` dataset to only include observations where the `Wind` speed is greater than 10 mph.
 
@@ -199,11 +216,11 @@ In addition to all the work you can do in packages such as `ggplot2` and `dplyr`
 
 ## Thank You!
 
-![](images/clipboard-2959541466.png){width="99"}
+![GitHub Logo](images/github.png){width="138"}
 
 ### You can find all content from today on GitHub:
 
-###  <https://github.com/hirnia/for_you>.
+### <https://github.com/hirnia/for_you>.
 
 ### I welcome any questions or feedback! :)
 
